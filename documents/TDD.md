@@ -41,3 +41,32 @@ hiteshskp@Hiteshs-MacBook-Air brandie-backend-challenge % node utils/db.js
 
 ✅ Connected to PostgreSQL
 Connected at: 2025-06-13T18:43:21.678Z
+
+### Tables
+
+#### `users`
+| Column      | Type    | Description          |
+|-------------|---------|----------------------|
+| id (PK)     | UUID    | Unique user ID       |
+| username    | String  | Unique name          |
+| email       | String  | Auth + contact       |
+| password    | String  | Hashed password      |
+| created_at  | Date    | Timestamp            |
+
+#### `posts`
+| Column      | Type    | Description          |
+|-------------|---------|----------------------|
+| id (PK)     | UUID    | Unique post ID       |
+| user_id     | UUID FK | Creator              |
+| content     | Text    | Text content         |
+| media_url   | String  | Optional media link  |
+| created_at  | Date    | Post time            |
+
+#### `follows`
+| Column        | Type    | Description                  |
+|---------------|---------|------------------------------|
+| follower_id   | UUID FK | The user who follows         |
+| following_id  | UUID FK | The user being followed      |
+| created_at    | Date    | Time of action               |
+
+---

@@ -70,3 +70,9 @@ Connected at: 2025-06-13T18:43:21.678Z
 | created_at    | Date    | Time of action               |
 
 ---
+## 4. 🔌 API Endpoints
+
+### **Auth**
+- `POST /register` – Register a new user  
+- `POST /login` – Login and get JWT token
+  

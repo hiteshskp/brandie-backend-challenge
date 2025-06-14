@@ -1,4 +1,4 @@
-const pool = require('../utils/db');
+const pool = require('../config/db');
 
 const followUser = async (followerId, followingId) => {
   await pool.query(

@@ -73,7 +73,7 @@ npm run test           # Run tests
 npm run test:coverage  # Run with coverage report
 ```
 
-> See [UTD.md](./UTD.md) for a full list of test scenarios
+> See [UTD.md](./docs/UTD.md) for a full list of test scenarios
 
 ---
 

@@ -180,6 +180,15 @@ NODE_ENV=development
 
 ---
 
+## Assumptions
+
+- Media input is a URL string (uploading not required)
+- No pagination required (MVP only)
+- Posts are globally visible to followers
+- All dates in UTC
+
+---
+
 ## Submission Checklist
 
 - [x] Functional APIs (auth, follow, post, feed)

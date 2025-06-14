@@ -1,4 +1,4 @@
-const pool = require('../utils/db');
+const pool = require('../config/db');
 
 const createPost = async (userId, content, mediaUrl) => {
   const res = await pool.query(

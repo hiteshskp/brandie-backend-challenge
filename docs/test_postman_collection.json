@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "83d8086d-d9c4-4d01-988b-80a266f4321d",
+		"name": "Brandie Backend API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28395135"
+	},
+	"item": [
+		{
+			"name": "Auth - Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"hitesh\",\n  \"email\": \"hitesh@example.com\",\n  \"password\": \"hitesh123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"hitesh@example.com\",\n  \"password\": \"hitesh123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Follow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YTVmNTY0Mi05MzE1LTRhNTgtYTM1NS1lMmJjNTcwOGRiZDEiLCJpYXQiOjE3NDk5MjY3NTYsImV4cCI6MTc1MDAxMzE1Nn0.HyMai20DKaohEUS2Vfca8hHuvyi8D8Hk7BbvxvATo2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/user/follow/c773ba99-3ca5-4654-ac8a-0cf8a291e7b2",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"follow",
+						"c773ba99-3ca5-4654-ac8a-0cf8a291e7b2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Unfollow",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YTVmNTY0Mi05MzE1LTRhNTgtYTM1NS1lMmJjNTcwOGRiZDEiLCJpYXQiOjE3NDk5MjY3NTYsImV4cCI6MTc1MDAxMzE1Nn0.HyMai20DKaohEUS2Vfca8hHuvyi8D8Hk7BbvxvATo2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/user/unfollow/c773ba99-3ca5-4654-ac8a-0cf8a291e7b2",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"unfollow",
+						"c773ba99-3ca5-4654-ac8a-0cf8a291e7b2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Followers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/user/followers",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"followers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Following",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YTVmNTY0Mi05MzE1LTRhNTgtYTM1NS1lMmJjNTcwOGRiZDEiLCJpYXQiOjE3NDk5MjY3NTYsImV4cCI6MTc1MDAxMzE1Nn0.HyMai20DKaohEUS2Vfca8hHuvyi8D8Hk7BbvxvATo2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/user/following",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"following"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YTVmNTY0Mi05MzE1LTRhNTgtYTM1NS1lMmJjNTcwOGRiZDEiLCJpYXQiOjE3NDk5MjY3NTYsImV4cCI6MTc1MDAxMzE1Nn0.HyMai20DKaohEUS2Vfca8hHuvyi8D8Hk7BbvxvATo2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"content\": \"This is my second post!\",\n  \"mediaUrl\": \"https://example.com/photo.jpg\"\n}"
+				},
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/posts",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - My Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3YTVmNTY0Mi05MzE1LTRhNTgtYTM1NS1lMmJjNTcwOGRiZDEiLCJpYXQiOjE3NDk5MjY3NTYsImV4cCI6MTc1MDAxMzE1Nn0.HyMai20DKaohEUS2Vfca8hHuvyi8D8Hk7BbvxvATo2o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/my-posts",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"my-posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post - Feed",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjNzczYmE5OS0zY2E1LTQ2NTQtYWM4YS0wY2Y4YTI5MWU3YjIiLCJpYXQiOjE3NDk5Mjc1ODQsImV4cCI6MTc1MDAxMzk4NH0.q6vdCVM7Z7ndFFS49-_Ha8mb1cxJsvOS3ew0Y7Yy8Hs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "https://brandie-backend-challenge.onrender.com/api/feed",
+					"protocol": "https",
+					"host": [
+						"brandie-backend-challenge",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"feed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

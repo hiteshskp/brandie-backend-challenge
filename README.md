@@ -1,17 +1,37 @@
 # Brandie Backend Challenge
 
-A minimal social media backend built with **Node.js**, **Express**, and **PostgreSQL**, designed for the Brandie Backend Engineer assignment.
+A minimal, production-ready social media backend built with **Node.js**, **Express**, and **PostgreSQL**, designed for the Brandie Backend Engineer assignment. Fully deployed, tested, and secured.
+
+---
+
+## Live Deployment
+
+- **Backend URL**: [https://brandie-backend-challenge.onrender.com](https://brandie-backend-challenge.onrender.com)
+- **Postman Collection**: [`docs/test_postman_collection.json`](./docs/test_postman_collection.json)
 
 ---
 
 ## Features
 
--  User Authentication (JWT)
--  Follow/Unfollow other users
--  View Followers and Following lists
--  Create text/media posts
--  View personal posts
--  View feed from followed users
+- ✅ JWT-based User Authentication
+- ✅ Follow/Unfollow other users
+- ✅ View Followers and Following lists
+- ✅ Create posts (text + media)
+- ✅ View personal posts
+- ✅ View feed from followed users
+- ✅ Full test suite with edge case coverage
+- ✅ Dockerized PostgreSQL integration
+- ✅ Render-hosted production instance
+
+---
+
+## Security & Best Practices
+
+- Passwords hashed using **bcrypt**
+- JWT secrets managed via environment variables (never in code)
+- Protected routes secured with middleware
+- PostgreSQL on Render uses **SSL/TLS enforced** connection
+- Rate limiting and validation layers ready for scale-out
 
 ---
 
@@ -20,7 +40,7 @@ A minimal social media backend built with **Node.js**, **Express**, and **Postgr
 - Node.js 18+
 - Express.js
 - PostgreSQL 15
-- Docker & Docker Compose
+- Docker + Docker Compose
 - Jest + Supertest (90%+ coverage)
 
 ---
@@ -37,30 +57,30 @@ src/
   ├── app.js          # Express app
   └── server.js       # Entry point
 tests/                # Jest test files
-docs/                 # TDD, UTD, etc.
+docs/                 # TDD, UTD, Postman
 sql/                  # schema.sql, seed.sql
 ```
 
 ---
 
-## Setup Instructions
+## Setup Instructions (Local)
 
 ```bash
-# Clone repo
+# Clone the repo
 git clone https://github.com/your-username/brandie-backend-challenge.git
 cd brandie-backend-challenge
 
-# Install deps
+# Install dependencies
 npm install
 
-# Create .env and .env.test from example
+# Set up env
 cp .env.test.example .env
 cp .env.test.example .env.test
 
 # Start PostgreSQL via Docker
 docker-compose up -d
 
-# Run the dev server
+# Run development server
 npm run dev
 ```
 
@@ -69,17 +89,84 @@ npm run dev
 ## Testing
 
 ```bash
-npm run test           # Run tests
-npm run test:coverage  # Run with coverage report
+npm run test           # Run all tests
+npm run test:coverage  # View coverage report
 ```
 
-> See [UTD.md](./docs/UTD.md) for a full list of test scenarios (unit test document)
+> For test cases, see [UTD.md](./docs/UTD.md)
+
+---
+
+## Usage Guide
+
+### Register
+
+```http
+POST /api/auth/register
+Content-Type: application/json
+
+{
+  "username": "hitesh",
+  "email": "hitesh@example.com",
+  "password": "hitesh123"
+}
+```
+
+### Login
+
+```http
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "hitesh@example.com",
+  "password": "hitesh123"
+}
+```
+
+Response:
+```json
+{
+  "token": "<JWT>"
+}
+```
+
+Use `Authorization: Bearer <JWT>` header in the following routes.
+
+---
+
+### Create Post
+
+```http
+POST /api/posts
+Authorization: Bearer <JWT>
+Content-Type: application/json
+
+{
+  "content": "My first post",
+  "mediaUrl": "https://example.com/image.png"
+}
+```
+
+### Follow a User
+
+```http
+POST /api/user/follow/<userId>
+Authorization: Bearer <JWT>
+```
+
+### View Feed
+
+```http
+GET /api/feed
+Authorization: Bearer <JWT>
+```
 
 ---
 
 ## Environment Variables
 
-Copy and modify from `.env.test.example`:
+Use `.env.test.example` as base:
 
 ```
 DB_USER=postgres
@@ -93,29 +180,16 @@ NODE_ENV=development
 
 ---
 
-## Decisions & Notes
-
--  REST was chosen over GraphQL for simplicity
--  JWT used over cookie-based auth for flexibility
--  PostgreSQL selected for strong relational modeling (follows/posts)
--  Docker for DB portability
--  Project refactored into scalable `/src` structure
-
----
-
-## Test Coverage Summary
-
-- 20+ tests written using Jest + Supertest
-- Covers: auth, follow, post, edge cases, error handling
-- Run `npm run test:coverage` to see live results
-
----
-
 ## Submission Checklist
 
-- [x] Functional auth/follow/feed APIs
-- [x] Test coverage with edge cases
-- [x] `.env.test` isolated environment
+- [x] Functional APIs (auth, follow, post, feed)
+- [x] Deployed on Render (secure SSL)
+- [x] 90%+ test coverage with edge cases
 - [x] Dockerized DB setup
-- [x] README with setup + decisions
-- [x] UTD.md with scenarios (unit test document)
+- [x] Postman tests in `docs/test_postman_collection.json`
+- [x] `.env.test` isolated + secured
+- [x] README + `deployment-complete.md`
+
+---
+
+Project is complete, tested, deployed, and ready for review.

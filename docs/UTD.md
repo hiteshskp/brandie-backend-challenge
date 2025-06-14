@@ -1,11 +1,11 @@
 
-# ✅ API Test Cases — Brandie Backend
+# API Test Cases — Brandie Backend
 
 This document outlines all the test cases implemented for the Brandie backend API using **Jest** and **Supertest**.
 
 ---
 
-## 🔐 Auth Routes
+## Auth Routes
 
 | Endpoint            | Method | Test Description                        |
 |---------------------|--------|------------------------------------------|
@@ -16,7 +16,7 @@ This document outlines all the test cases implemented for the Brandie backend AP
 
 ---
 
-## 👤 User Follow Routes
+## User Follow Routes
 
 | Endpoint                        | Method  | Test Description                          |
 |----------------------------------|---------|--------------------------------------------|
@@ -29,7 +29,7 @@ This document outlines all the test cases implemented for the Brandie backend AP
 
 ---
 
-## 📝 Post Routes
+## Post Routes
 
 | Endpoint         | Method | Test Description                                      |
 |------------------|--------|--------------------------------------------------------|
@@ -42,7 +42,7 @@ This document outlines all the test cases implemented for the Brandie backend AP
 
 ---
 
-## 🔐 Middleware Edge Cases
+## Middleware Edge Cases
 
 | Scenario                    | Expected Result              |
 |-----------------------------|------------------------------|
@@ -51,17 +51,17 @@ This document outlines all the test cases implemented for the Brandie backend AP
 
 ---
 
-## 🧪 Coverage Summary (via `npm run test:coverage`)
+## Coverage Summary (via `npm run test:coverage`)
 
 ```
 Tests:       20+ total
-Pass Rate:   ✅ 100%
-Coverage:    📊 ~90% total line and branch
+Pass Rate:   100%
+Coverage:    ~90% total line and branch
 ```
 
 ---
 
-## 🛠️ Run Tests
+## Run Tests
 
 ```bash
 npm run test           # Standard test run

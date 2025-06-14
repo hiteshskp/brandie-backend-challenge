@@ -14,13 +14,15 @@ pool.on('connect', () => {
 });
 
 // Optional: run a test query
-(async () => {
-  try {
-    const res = await pool.query('SELECT NOW()');
-    console.log('Connected at:', res.rows[0].now);
-  } catch (err) {
-    console.error('❌ DB Connection Error:', err);
-  }
-})();
+if (process.env.NODE_ENV !== 'test') {
+  (async () => {
+    try {
+      const res = await pool.query('SELECT NOW()');
+      console.log('Connected at:', res.rows[0].now);
+    } catch (err) {
+      console.error('❌ DB Connection Error:', err);
+    }
+  })();
+}
 
 module.exports = pool;

@@ -4,8 +4,18 @@
   "description": "Minimal social-media-style backend built with Node.js, Express, and PostgreSQL for Brandie’s Backend Engineer assignment. Supports user follow system, post creation, timelines, and JWT-based authentication.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test jest --coverage",
+    "test:coverage": "NODE_ENV=test jest --coverage"
   },
+  "jest": {
+  "collectCoverageFrom": [
+    "**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/utils/db.js",
+    "!**/server.js",
+    "!**/coverage/**"
+  ]
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hiteshskp/brandie-backend-challenge.git"
@@ -25,6 +35,8 @@
     "pg": "^8.16.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "jest": "^30.0.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.1"
   }
 }

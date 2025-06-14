@@ -33,3 +33,9 @@ insomnia/
 
 # TypeScript (if added later)
 *.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Miscellaneous
+*.swp

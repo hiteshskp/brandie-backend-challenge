@@ -88,3 +88,35 @@ Connected at: 2025-06-13T18:43:21.678Z
 - `GET /my-posts` – Your own posts  
 
 ---
+
+## 5. 🔒 Authentication Flow
+
+- JWT issued on login
+- Stored client-side (frontend, if used)
+- Middleware `verifyToken` ensures access to protected routes
+---
+
+## 6. 🏗️ Architecture Diagram
+
+[ Client ] ⇄ [ Express API ]
+|
+┌───────┴────────┐
+| |
+[ PostgreSQL ] [ JWT Auth ]
+|
+Users / Posts / Follows
+
+---
+
+## 7. 🧪 Testing Strategy
+
+- Manual test cases via **Postman**
+- Optional unit tests via **Jest**
+- Test scenarios:
+  - Register/Login
+  - Follow/Unfollow logic
+  - Post creation and retrieval
+  - Feed accuracy (ordered by time)
+  - Auth-protected route checks
+
+---

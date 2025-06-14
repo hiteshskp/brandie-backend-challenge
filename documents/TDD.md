@@ -80,4 +80,11 @@ Connected at: 2025-06-13T18:43:21.678Z
 - `POST /follow/:userId` – Follow a user  
 - `DELETE /unfollow/:userId` – Unfollow a user  
 - `GET /followers` – List of users who follow you  
-- `GET /following` – List of users you follow  
+- `GET /following` – List of users you follow 
+
+### **Posts**
+- `POST /posts` – Create a post (text + media URL)  
+- `GET /feed` – Timeline of posts from followed users  
+- `GET /my-posts` – Your own posts  
+
+---

@@ -1,16 +1,16 @@
-# 🧾 Technical Design Document  
+# Technical Design Document  
 **Project**: Social Media-Style Backend – Brandie Assignment  
 **Engineer**: Hitesh Kumar  
 **Date**: 13/06/2025
 
 ---
 
-## 1. 🎯 Objective  
+## 1. Objective  
 Design and implement a minimal, scalable backend system that supports basic social media features such as user relationships (follow/unfollow), post creation, user feeds, and authentication. The system should expose clean RESTful APIs and use PostgreSQL as the data store.
 
 ---
 
-## 2. ⚙️ Tech Stack
+## 2. Tech Stack
 
 | Component      | Choice            | Reason                                                                 |
 |----------------|-------------------|------------------------------------------------------------------------|
@@ -22,7 +22,7 @@ Design and implement a minimal, scalable backend system that supports basic soci
 
 ---
 
-## 3. 📐 Data Modeling
+## 3. Data Modeling
 
 Create Dockerized PostgreSQL setup for project.
 
@@ -70,7 +70,7 @@ Connected at: 2025-06-13T18:43:21.678Z
 | created_at    | Date    | Time of action               |
 
 ---
-## 4. 🔌 API Endpoints
+## 4. API Endpoints
 
 ### **Auth**
 - `POST /register` – Register a new user  
@@ -89,26 +89,14 @@ Connected at: 2025-06-13T18:43:21.678Z
 
 ---
 
-## 5. 🔒 Authentication Flow
+## 5. Authentication Flow
 
 - JWT issued on login
 - Stored client-side (frontend, if used)
 - Middleware `verifyToken` ensures access to protected routes
 ---
 
-## 6. 🏗️ Architecture Diagram
-
-[ Client ] ⇄ [ Express API ]
-|
-┌───────┴────────┐
-| |
-[ PostgreSQL ] [ JWT Auth ]
-|
-Users / Posts / Follows
-
----
-
-## 7. 🧪 Testing Strategy
+## 6. Testing Strategy
 
 - Manual test cases via **Postman**
 - Optional unit tests via **Jest**
@@ -118,5 +106,14 @@ Users / Posts / Follows
   - Post creation and retrieval
   - Feed accuracy (ordered by time)
   - Auth-protected route checks
+
+---
+
+## 7. Assumptions
+
+- Media input is a URL string (uploading not required)
+- No pagination required (MVP only)
+- Posts are globally visible to followers
+- All dates in UTC
 
 ---
